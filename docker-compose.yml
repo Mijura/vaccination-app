@@ -1,0 +1,44 @@
+version: '3'
+
+services:
+
+  client:
+    build: 
+      context: './vaccination-client/'
+      dockerfile: 'Dockerfile'
+    env_file:
+      - ./.env
+    ports:
+      - ${CLIENT_PORT}:${CLIENT_PORT}
+
+  config-service:
+    build:
+      context: './vaccination-services/config-service/'
+      dockerfile: Dockerfile
+      args:
+        CONFIG_PORT: ${CONFIG_PORT}
+    env_file:
+      - ./.env
+    ports:
+      - ${CONFIG_PORT}:${CONFIG_PORT}
+    networks:
+      - backend
+
+  discovery-service:
+    build:
+      context: './vaccination-services/discovery-service/'
+      dockerfile: Dockerfile
+      args:
+        CONFIG_HOST: http://config-service
+        CONFIG_PORT: ${CONFIG_PORT}
+    env_file:
+      - ./.env
+    ports:
+      - ${DISCOVERY_PORT}:${DISCOVERY_PORT}
+    depends_on:
+      - config-service
+    networks:
+      - backend
+
+networks: 
+  backend:
