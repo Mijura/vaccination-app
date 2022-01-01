@@ -1,2 +1,12 @@
 # vaccination-app
-The project for the exam XML and web services (Faculty of Technical Science 2021/2022)
+
+## Prerequests
+
+Instal Docker & docker-compose
+
+## RUN
+1. Run docker-compose
+
+```bash
+docker-compose up --build
+```
