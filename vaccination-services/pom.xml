@@ -51,6 +51,7 @@
   		<module>config-service</module>
   		<module>gateway-service</module>
   		<module>user-management-service</module>
+  		<module>immunization-portal-service</module>
   	</modules>
   	
 </project>

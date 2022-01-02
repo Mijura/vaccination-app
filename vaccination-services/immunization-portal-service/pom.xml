@@ -1,0 +1,35 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  	<modelVersion>4.0.0</modelVersion>
+  	<parent>
+    	<groupId>ftn.uns.ac.rs</groupId>
+    	<artifactId>vaccination-services</artifactId>
+    	<version>0.0.1-SNAPSHOT</version>
+  	</parent>
+  
+  	<artifactId>immunization-portal-service</artifactId>
+  	
+  	<dependencies>
+  		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-config</artifactId>
+		</dependency>
+		<dependency>
+    		<groupId>org.springframework.retry</groupId>
+    		<artifactId>spring-retry</artifactId>
+    		<version>${spring-retry.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-webmvc-core</artifactId>
+			<version>1.5.13</version>
+		</dependency>
+  	</dependencies>
+</project>

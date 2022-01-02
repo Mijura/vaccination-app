@@ -74,5 +74,22 @@ services:
     networks:
       - backend
 
+  immunization-portal-service:
+    build:
+      context: './vaccination-services/immunization-portal-service/'
+      dockerfile: Dockerfile
+      args:
+        CONFIG_URL: ${CONFIG_URL}
+        DISCOVERY_URL: ${DISCOVERY_URL}
+        USER_MANAGEMENT_PORT: ${IMMUNIZATION_PORTAL_PORT}
+    env_file:
+      - ./.env
+    ports:
+      - ${IMMUNIZATION_PORTAL_PORT}:${IMMUNIZATION_PORTAL_PORT}
+    depends_on:
+      - config-service
+    networks:
+      - backend
+
 networks: 
   backend:
