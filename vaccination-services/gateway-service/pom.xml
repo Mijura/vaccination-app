@@ -25,5 +25,15 @@
     		<artifactId>spring-retry</artifactId>
     		<version>${spring-retry.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-webflux-core</artifactId>
+			<version>1.5.13</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-webflux-ui</artifactId>
+			<version>1.5.13</version>
+		</dependency>
   </dependencies>
 </project>
