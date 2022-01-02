@@ -8,11 +8,15 @@ Install Maven, Docker, and docker-compose
 ## RUN
 1. Generate jar files 
 
+Position terminal in the folder vaccination-services (parent module of java services) and execute command:
+
 ```bash
 mvn clean package
 ```
 
 2. Run docker-compose
+
+Position terminal to the root folder (vaccination-app folder). Run the following command: 
 
 ```bash
 docker-compose up --build
