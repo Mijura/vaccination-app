@@ -49,6 +49,8 @@
   	<modules>
   		<module>discovery-service</module>
   		<module>config-service</module>
+  		<module>gateway-service</module>
+  		<module>user-management-service</module>
   	</modules>
   	
 </project>

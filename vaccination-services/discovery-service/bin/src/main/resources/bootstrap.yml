@@ -3,7 +3,7 @@ spring:
     name: discovery-service
   cloud:
     config:
-      uri: ${CONFIG_URL}
+      uri: http://config-service:8888/
       label: main
       fail-fast: true
       retry:

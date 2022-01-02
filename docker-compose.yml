@@ -16,7 +16,7 @@ services:
       context: './vaccination-services/config-service/'
       dockerfile: Dockerfile
       args:
-        CONFIG_PORT: ${CONFIG_PORT}
+        PORT: ${CONFIG_PORT}
     env_file:
       - ./.env
     ports:
@@ -29,12 +29,46 @@ services:
       context: './vaccination-services/discovery-service/'
       dockerfile: Dockerfile
       args:
-        CONFIG_HOST: http://config-service
-        CONFIG_PORT: ${CONFIG_PORT}
+        CONFIG_URL: ${CONFIG_URL}
+        DISCOVERY_PORT: ${DISCOVERY_PORT}
     env_file:
       - ./.env
     ports:
       - ${DISCOVERY_PORT}:${DISCOVERY_PORT}
+    depends_on:
+      - config-service
+    networks:
+      - backend
+
+  gateway-service:
+    build:
+      context: './vaccination-services/gateway-service/'
+      dockerfile: Dockerfile
+      args:
+        CONFIG_URL: ${CONFIG_URL}
+        DISCOVERY_URL: ${DISCOVERY_URL}
+        GATEWAY_PORT: ${GATEWAY_PORT}
+    env_file:
+      - ./.env
+    ports:
+      - ${GATEWAY_PORT}:${GATEWAY_PORT}
+    depends_on:
+      - config-service
+    networks:
+      - backend
+
+  user-management-service:
+    build:
+      context: './vaccination-services/user-management-service/'
+      dockerfile: Dockerfile
+      args:
+        CONFIG_URL: ${CONFIG_URL}
+        DISCOVERY_URL: ${DISCOVERY_URL}
+        USER_MANAGEMENT_PORT: ${USER_MANAGEMENT_PORT}
+    env_file:
+      - ./.env
+    ports:
+      - ${USER_MANAGEMENT_PORT}:${USER_MANAGEMENT_PORT}
     depends_on:
       - config-service
     networks:
