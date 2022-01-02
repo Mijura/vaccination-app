@@ -91,5 +91,22 @@ services:
     networks:
       - backend
 
+  mail-service:
+    build:
+      context: './vaccination-services/mail-service/'
+      dockerfile: Dockerfile
+      args:
+        CONFIG_URL: ${CONFIG_URL}
+        DISCOVERY_URL: ${DISCOVERY_URL}
+        USER_MANAGEMENT_PORT: ${MAIL_PORT}
+    env_file:
+      - ./.env
+    ports:
+      - ${MAIL_PORT}:${MAIL_PORT}
+    depends_on:
+      - config-service
+    networks:
+      - backend
+
 networks: 
   backend:
