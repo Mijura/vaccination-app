@@ -30,7 +30,7 @@ Position terminal to the root folder (vaccination-app folder). Run the following
 docker-compose -f docker-compose-elk.yml up --build
 ```
 
-Logs will be stored into elasticsearch db, and can be queried on Kibana dashboard (http://localhost:5601). First time accessing to Kibana dashboard will requeried to create index pattern (*-service)
+Logs will be stored in Elasticsearch and they are visible on the Kibana dashboard (http://localhost:5601). The first time accessing to Kibana dashboard it will require creating the index pattern (*-service)
 
 ![image](https://user-images.githubusercontent.com/17992401/147994297-8276cf23-8ed5-4fe3-b45c-5ee87e82f9b9.png)
 
