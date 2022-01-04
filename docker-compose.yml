@@ -22,7 +22,7 @@ services:
     ports:
       - ${CONFIG_PORT}:${CONFIG_PORT}
     networks:
-      - backend
+      - portal_net
 
   discovery-service:
     build:
@@ -38,7 +38,7 @@ services:
     depends_on:
       - config-service
     networks:
-      - backend
+      - portal_net
 
   gateway-service:
     build:
@@ -55,7 +55,7 @@ services:
     depends_on:
       - config-service
     networks:
-      - backend
+      - portal_net
 
   user-management-service:
     build:
@@ -72,7 +72,7 @@ services:
     depends_on:
       - config-service
     networks:
-      - backend
+      - portal_net
 
   immunization-portal-service:
     build:
@@ -89,7 +89,7 @@ services:
     depends_on:
       - config-service
     networks:
-      - backend
+      - portal_net
 
   mail-service:
     build:
@@ -106,7 +106,9 @@ services:
     depends_on:
       - config-service
     networks:
-      - backend
+      - portal_net
 
 networks: 
-  backend:
+  portal_net:
+    external:
+      name: portal_net

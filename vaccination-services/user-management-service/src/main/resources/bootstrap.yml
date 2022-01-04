@@ -11,3 +11,8 @@ spring:
         multiplier: 1.5
         max-attempts: 10000
         max-interval: 1000
+        
+logback:
+  destination:
+    url: logstash
+    port: 5000
