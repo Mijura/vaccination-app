@@ -18,6 +18,7 @@
             <xs:attribute name="id"/>
             <xs:attribute name="status"/>
             <xs:attribute name="scheduledTo"/>
+            <xs:attribute name="consentId"/>
         </xs:complexType>
     </xs:element>
 </xs:schema>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+    xmlns:ns1="http://www.immunization-portal/citizen"
+    xmlns:ns2="htttp://www.immunization-portal.com/dose">
+    <xs:import namespace="http://www.immunization-portal/citizen" schemaLocation="citizen.xsd"/>
+    <xs:import namespace="htttp://www.immunization-portal.com/dose" schemaLocation="dose.xsd"/>
+    <xs:element name="vaccination_record">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="ns1:citizen"/>
+                <xs:element maxOccurs="unbounded" minOccurs="1" ref="ns2:dose"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
