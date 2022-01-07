@@ -2,10 +2,8 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
     xmlns:ns1="http://www.immunization-portal/citizen"
     xmlns:ns2="http://www.immunization-portal.com/vaccine">
-    <xs:import namespace="http://www.immunization-portal/citizen"
-        schemaLocation="citizen.xsd"/>
-    <xs:import namespace="http://www.immunization-portal.com/vaccine"
-        schemaLocation="vaccine.xsd"/>
+    <xs:import namespace="http://www.immunization-portal/citizen" schemaLocation="citizen.xsd"/>
+    <xs:import namespace="http://www.immunization-portal.com/vaccine" schemaLocation="vaccine.xsd"/>
     <xs:element name="applicationForVaccine">
         <xs:complexType>
             <xs:sequence>
@@ -13,7 +11,7 @@
                 <xs:element ref="ns2:vaccine"/>
             </xs:sequence>
             <xs:attribute name="id"/>
-            <xs:attribute name="submissionDate"/>
+            <xs:attribute name="date"/>
         </xs:complexType>
     </xs:element>
 </xs:schema>

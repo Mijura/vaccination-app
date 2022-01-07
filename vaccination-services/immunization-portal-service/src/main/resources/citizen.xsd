@@ -34,12 +34,12 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="type">
-                    <xs:complexType>
-                        <xs:choice>
-                            <xs:element name="passaport"/>
-                            <xs:element name="personalCard"/>
-                        </xs:choice>
-                    </xs:complexType>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="passaport"/>
+                            <xs:enumeration value="personal card"/>
+                        </xs:restriction>
+                    </xs:simpleType>
                 </xs:element>
                 <xs:element name="documentNo" type="xs:string"/>
                 <xs:element name="issuedBy" type="xs:string"/>

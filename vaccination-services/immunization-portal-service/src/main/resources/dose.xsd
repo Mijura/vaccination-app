@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+    targetNamespace="htttp://www.immunization-portal.com/dose"
+    xmlns="htttp://www.immunization-portal.com/dose"
+    xmlns:ns1="http://www.immunization-portal.com/vaccine"
+    xmlns:ns2="http://www.immunization-portal.com/health_care_institution">
+    <xs:import namespace="http://www.immunization-portal.com/health_care_institution"
+        schemaLocation="health_care_institution.xsd"/>
+    <xs:import namespace="http://www.immunization-portal.com/vaccine" schemaLocation="vaccine.xsd"/>
+    <xs:element name="dose">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="doseNo" type="xs:int"/>
+                <xs:element ref="ns1:vaccine"/>
+                <xs:element ref="ns2:healthCareInstitution"/>
+                <xs:element name="date" type="xs:dateTime"/>
+            </xs:sequence>
+            <xs:attribute name="id"/>
+            <xs:attribute name="status"/>
+            <xs:attribute name="scheduledTo"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
