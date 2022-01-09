@@ -5,10 +5,10 @@
     <xs:element name="citizen">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="personalNo" type="xs:string"/>
-                <xs:element name="firstName" type="xs:string"/>
-                <xs:element name="lastName" type="xs:string"/>
-                <xs:element name="dateOfBirth" type="xs:date"/>
+                <xs:element name="personal_no" type="xs:string"/>
+                <xs:element name="first_name" type="xs:string"/>
+                <xs:element name="last_name" type="xs:string"/>
+                <xs:element name="date_of_birth" type="xs:date"/>
                 <xs:element name="gender">
                     <xs:complexType>
                         <xs:choice>
@@ -24,25 +24,25 @@
                         </xs:restriction>
                     </xs:simpleType>
                 </xs:element>
-                <xs:element name="resudence" type="xs:string"/>
-                <xs:element ref="personalDocument"/>
+                <xs:element name="residence" type="xs:string"/>
+                <xs:element ref="personal_document"/>
             </xs:sequence>
-            <xs:attribute name="id" type="xs:string"/>
+            <xs:attribute name="id" type="xs:string" use="required"/>
         </xs:complexType>
     </xs:element>
-    <xs:element name="personalDocument">
+    <xs:element name="personal_document">
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="type">
                     <xs:simpleType>
                         <xs:restriction base="xs:string">
                             <xs:enumeration value="passaport"/>
-                            <xs:enumeration value="personal card"/>
+                            <xs:enumeration value="identity card"/>
                         </xs:restriction>
                     </xs:simpleType>
                 </xs:element>
-                <xs:element name="documentNo" type="xs:string"/>
-                <xs:element name="issuedBy" type="xs:string"/>
+                <xs:element name="document_no" type="xs:string"/>
+                <xs:element name="issued_by" type="xs:string"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>

@@ -9,7 +9,10 @@
             <xs:sequence>
                 <xs:element ref="ns1:citizen"/>
                 <xs:element maxOccurs="unbounded" minOccurs="1" ref="ns2:dose"/>
+                <xs:element name="qr_code" type="xs:string"/>
             </xs:sequence>
+            <xs:attribute name="id" type="xs:string" use="required"/>
+            <xs:attribute name="generated" type="xs:dateTime" use="required"/>
         </xs:complexType>
     </xs:element>
 </xs:schema>

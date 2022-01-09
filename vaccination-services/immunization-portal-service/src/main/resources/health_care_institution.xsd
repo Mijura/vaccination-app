@@ -2,12 +2,13 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
     targetNamespace="http://www.immunization-portal.com/health_care_institution"
     xmlns="http://www.immunization-portal.com/health_care_institution">
-    <xs:element name="healthCareInstitution">
+    <xs:element name="health_care_institution">
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="name" type="xs:string"/>
                 <xs:element name="address" type="xs:string"/>
             </xs:sequence>
+            <xs:attribute name="id" use="required"/>
         </xs:complexType>
     </xs:element>
 </xs:schema>

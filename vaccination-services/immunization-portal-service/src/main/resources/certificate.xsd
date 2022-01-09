@@ -13,14 +13,14 @@
                 <xs:element name="doses">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="numberOfDoses"/>
+                            <xs:element name="number"/>
                             <xs:element ref="ns2:vaccine"/>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
-                <xs:element name="issuedBy" type="xs:string"/>
+                <xs:element name="issued_by" type="xs:string"/>
             </xs:sequence>
-            <xs:attribute name="id"/>
+            <xs:attribute name="id" use="required"/>
         </xs:complexType>
     </xs:element>
 </xs:schema>

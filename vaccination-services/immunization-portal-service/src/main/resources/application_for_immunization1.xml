@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application_for_immunization xmlns:ns1="http://www.immunization-portal/citizen"
+ xmlns:ns2="http://www.immunization-portal.com/vaccine"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="application_for_immunization.xsd" id="id0" date="2006-05-04">
+    <ns1:citizen id="id1">
+        <ns1:personal_no>2908989710034</ns1:personal_no>
+        <ns1:first_name>Marko</ns1:first_name>
+        <ns1:last_name>Markovic</ns1:last_name>
+        <ns1:date_of_birth>1989-08-29</ns1:date_of_birth>
+        <ns1:gender>
+            <ns1:male>
+            </ns1:male>
+        </ns1:gender>
+        <ns1:email>marko.markovic@gmail.com</ns1:email>
+        <ns1:residence>Novi Sad</ns1:residence>
+        <ns1:personal_document>
+            <ns1:type>identity card</ns1:type>
+            <ns1:document_no>0003988789</ns1:document_no>
+            <ns1:issued_by>PU Novi Sad</ns1:issued_by>
+        </ns1:personal_document>
+    </ns1:citizen>
+    <ns2:vaccine id="id2">
+        <ns2:name>Pfizer-BioNTech</ns2:name>
+        <ns2:manufacturer>BIONTECH MANUFACTURING GMBH</ns2:manufacturer>
+    </ns2:vaccine>
+</application_for_immunization>

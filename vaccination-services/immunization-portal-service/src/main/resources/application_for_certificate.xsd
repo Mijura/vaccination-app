@@ -3,11 +3,11 @@
     <xs:element name="application_for_certificate">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="personalId" type="xs:string"/>
+                <xs:element name="personal_no" type="xs:string"/>
                 <xs:element name="date" type="xs:dateTime"/>
                 <xs:element name="reason" type="xs:string"/>
             </xs:sequence>
-            <xs:attribute name="id"/>
+            <xs:attribute name="id" type="xs:string" use="required"/>
         </xs:complexType>
     </xs:element>
 </xs:schema>

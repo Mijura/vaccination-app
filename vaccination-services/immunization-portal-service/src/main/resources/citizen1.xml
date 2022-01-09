@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<citizen xmlns="http://www.immunization-portal/citizen"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="citizen.xsd" id="id1">
+    <personal_no>2908989710034</personal_no>
+    <first_name>Marko</first_name>
+    <last_name>Markovic</last_name>
+    <date_of_birth>1989-08-29</date_of_birth>
+    <gender>
+        <male>
+        </male>
+    </gender>
+    <email>marko.markovic@gmail.com</email>
+    <residence>Novi Sad</residence>
+    <personal_document>
+        <type>identity card</type>
+        <document_no>0003988789</document_no>
+        <issued_by>PU Novi Sad</issued_by>
+    </personal_document>
+</citizen>

@@ -8,20 +8,28 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:element ref="ns1:citizen"/>
-                <xs:element minOccurs="1" name="helathInfo">
+                <xs:element minOccurs="1" name="health_info">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="hasCovid" type="xs:boolean"/>
-                            <xs:element name="hasSymptoms" type="xs:boolean"/>
+                            <xs:element name="has_covid" type="xs:boolean"/>
+                            <xs:element name="has_symptoms" type="xs:boolean"/>
                             <xs:element name="allergies" type="xs:string"/>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
                 <xs:element name="confirmation" type="xs:boolean"/>
             </xs:sequence>
-            <xs:attribute name="id"/>
-            <xs:attribute name="date"/>
-            <xs:attribute name="status"/>
+            <xs:attribute name="id" use="required"/>
+            <xs:attribute name="date" type="xs:date" use="required"/>
+            <xs:attribute name="status" use="required">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="SUBMITTED"/>
+                        <xs:enumeration value="SCHEDULED"/>
+                        <xs:enumeration value="RESOLVED"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
         </xs:complexType>
     </xs:element>
 </xs:schema>

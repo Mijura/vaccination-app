@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+    xmlns:ns1="http://www.immunization-portal.com/vaccine">
+    <xs:import namespace="http://www.immunization-portal.com/vaccine" schemaLocation="vaccine.xsd"/>
+    <xs:element name="vaccination_report">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="immunization_applications" type="xs:int"/>
+                <xs:element name="certificate_applications" type="xs:int"/>
+                <xs:element name="certificates" type="xs:int"/>
+                <xs:element name="vaccines">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="given" type="xs:int"/>
+                            <xs:element name="arrived" type="xs:int"/>
+                            <xs:element name="by_type">
+                                <xs:complexType>
+                                    <xs:sequence maxOccurs="unbounded">
+                                        <xs:element name="given" type="xs:int"/>
+                                        <xs:element name="arrived" type="xs:int"/>
+                                        <xs:element ref="ns1:vaccine"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="id" use="required"/>
+            <xs:attribute name="from" use="required"/>
+            <xs:attribute name="to" use="required"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

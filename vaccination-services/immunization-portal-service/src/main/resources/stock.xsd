@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+    xmlns:ns1="http://www.immunization-portal.com/health_care_institution"
+    xmlns:ns2="http://www.immunization-portal.com/vaccine">
+    <xs:import namespace="http://www.immunization-portal.com/vaccine" schemaLocation="vaccine.xsd"/>
+    <xs:element name="stock">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" name="available">
+                    <xs:complexType>
+                        <xs:sequence maxOccurs="1">
+                            <xs:element name="quantity" type="xs:int"/>
+                            <xs:element ref="ns2:vaccine"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="batch" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="quantity"/>
+                            <xs:element ref="ns2:vaccine"/>
+                        </xs:sequence>
+                        <xs:attribute name="id" use="required"/>
+                        <xs:attribute name="date" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="id" use="required"/>
+            <xs:attribute name="institution_id" use="required"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

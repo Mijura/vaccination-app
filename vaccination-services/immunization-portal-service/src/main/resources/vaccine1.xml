@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vaccine xmlns="http://www.immunization-portal.com/vaccine"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="vaccine.xsd" id="id1">
+    <name>Pfizer-BioNTech</name>
+    <manufacturer>BIONTECH MANUFACTURING GMBH</manufacturer>
+</vaccine>

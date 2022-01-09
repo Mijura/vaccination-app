@@ -4,14 +4,14 @@
     xmlns:ns2="http://www.immunization-portal.com/vaccine">
     <xs:import namespace="http://www.immunization-portal/citizen" schemaLocation="citizen.xsd"/>
     <xs:import namespace="http://www.immunization-portal.com/vaccine" schemaLocation="vaccine.xsd"/>
-    <xs:element name="applicationForVaccine">
+    <xs:element name="application_for_immunization">
         <xs:complexType>
             <xs:sequence>
                 <xs:element ref="ns1:citizen"/>
                 <xs:element ref="ns2:vaccine"/>
             </xs:sequence>
-            <xs:attribute name="id"/>
-            <xs:attribute name="date"/>
+            <xs:attribute name="id" type="xs:string" use="required"/>
+            <xs:attribute name="date" type="xs:date" use="required"/>
         </xs:complexType>
     </xs:element>
 </xs:schema>

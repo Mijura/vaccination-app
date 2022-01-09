@@ -10,15 +10,22 @@
     <xs:element name="dose">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="doseNo" type="xs:int"/>
+                <xs:element name="number" type="xs:int"/>
                 <xs:element ref="ns1:vaccine"/>
-                <xs:element ref="ns2:healthCareInstitution"/>
+                <xs:element ref="ns2:health_care_institution"/>
                 <xs:element name="date" type="xs:dateTime"/>
             </xs:sequence>
-            <xs:attribute name="id"/>
-            <xs:attribute name="status"/>
-            <xs:attribute name="scheduledTo"/>
-            <xs:attribute name="consentId"/>
+            <xs:attribute name="id" type="xs:string" use="required"/>
+            <xs:attribute name="status" use="required">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="SCHEDULED"/>
+                        <xs:enumeration value="GIVEN"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="scheduled_to" type="xs:dateTime" use="required"/>
+            <xs:attribute name="consent_id" type="xs:string" use="required"/>
         </xs:complexType>
     </xs:element>
 </xs:schema>

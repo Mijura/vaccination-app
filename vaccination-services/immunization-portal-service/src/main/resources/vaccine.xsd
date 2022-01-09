@@ -8,7 +8,7 @@
                 <xs:element name="name"/>
                 <xs:element name="manufacturer"/>
             </xs:sequence>
-            <xs:attribute name="id"/>
+            <xs:attribute name="id" type="xs:string" use="required"/>
         </xs:complexType>
     </xs:element>
 </xs:schema>
